@@ -1,8 +1,8 @@
 # Dotfiles
 
-## Config all
+## Install
 ```
-curl -s https://raw.githubusercontent.com/mauserkar/dotfiles/main/README.md | grep -v curl | grep -v README | sh
+curl -s https://raw.githubusercontent.com/mauserkar/dotfiles/main/README.md | grep curl | grep -v README | sh
 ```
 
 ### Bash_aliases
