@@ -1,3 +1,5 @@
+export PS1='\e[1;30m\u\e[39m\[@\e[32m\]\W \e[39m$ "
+
 ### Apt
 alias apt_update='apt-get update && apt-get upgrade'
 alias apt_install='apt-get install'
