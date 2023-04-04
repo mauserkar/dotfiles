@@ -25,8 +25,8 @@ alias cat_group="cat /etc/group | column -t -s:"
 ### Common
 alias show_date='date +%H%M%S-%d%m%Y'
 # alias rm_history="history -d `history | tail -1 | awk {'print $1'}`"
-alias pb_copy='xclip -selection clipboard'
-alias pb_paste='xclip -selection clipboard -o'
+alias copy='xclip -selection clipboard'
+alias paste='xclip -selection clipboard -o'
 alias random_number='shuf -i 100000-200000 -n 1'
 alias generate_password='openssl rand -base64 16 | grep -v "="'
 generate_ssh() {
