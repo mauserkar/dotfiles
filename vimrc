@@ -38,7 +38,6 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == ''
 
 
 " Config NerdCommenter
-" nnoremap <leader>k :|NERDCommenterToggle|<CR>
 filetype plugin on
 let g:NERDCreateDefaultMappings = 1
 let g:NERDSpaceDelims = 1
@@ -56,7 +55,7 @@ map <leader>t :below :terminal <cr>
 map <leader>n :tabnew <cr>
 map <leader>w :tabclose <cr>
 nnoremap <leader>d :NERDTreeToggle <cr>
-nmap <leader>k <plug>NERDCommenterToggle
+map <leader>k <plug>NERDCommenterToggle
 map <leader>f :Files <cr>
 map <F2> <c-w>W
 nmap <leader>l gT
