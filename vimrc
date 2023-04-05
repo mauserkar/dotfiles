@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 
@@ -35,6 +36,7 @@ call plug#end()
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == '' | NERDTree | endif
+let g:NERDTreeWinSize=40
 
 
 " Config NerdCommenter
@@ -64,7 +66,9 @@ map <leader>9 :res 100 <cr>
 map <leader>0 :res 0 <cr>
 map <leader>+ :res +5 <cr>
 map <leader>- :res -5 <cr>
-
+nmap <leader>gf <Plug>(GitGutterNextHunk)
+nmap <leader>gb <Plug>(GitGutterPrevHunk)
+map <leader>gd :GitGutterDiffOrig <cr>
 
 " Install theme if not present
 if empty(glob('~/.vim/colors/atom-dark.vim'))
