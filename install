@@ -1,0 +1,4 @@
+#!/bin/bash
+curl -s https://raw.githubusercontent.com/mauserkar/dotfiles/main/README.md | grep curl | grep -v README | bash && echo "Dotfiles installed"
+# vim -c PlugInstall\|qa! > /dev/null 2>&1
+# bash
