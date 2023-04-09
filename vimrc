@@ -21,7 +21,6 @@ set termwinsize=15x0
 
 " Install Plugins :PlugInstall
 call plug#begin('~/.vim/plugged')
-  Plug 'morhetz/gruvbox'
   Plug 'jiangmiao/auto-pairs'
   Plug 'preservim/nerdtree'
   Plug 'preservim/nerdcommenter'
