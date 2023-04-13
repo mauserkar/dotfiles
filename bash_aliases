@@ -28,7 +28,7 @@ alias show_date='date +%H%M%S-%d%m%Y'
 alias copy='xclip -selection clipboard'
 alias paste='xclip -selection clipboard -o'
 alias random_number='shuf -i 100000-200000 -n 1'
-alias generate_password='openssl rand -base64 16 | grep -v "="'
+alias generate_password='openssl rand -base64 16 | cut -d "="'
 generate_ssh() {
   export SSH_NAME="$1"
   ssh-keygen -t rsa -b 4096 -N "" -f $SSH_NAME -C $SSH_NAME.pub > /dev/null
