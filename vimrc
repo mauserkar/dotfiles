@@ -19,7 +19,7 @@ set termwinsize=15x0
 
 " ShortCuts
 map <Space> <Leader>
-map <leader>h :reg
+map <leader>h :reg <cr>
 map <leader>fr :%s/old/new/g
 map <leader>t :below :terminal <cr>
 map <leader>n :tabnew <cr>
