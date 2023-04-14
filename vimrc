@@ -6,7 +6,6 @@ set showmatch
 set number
 set numberwidth=1
 set mouse=r
-set clipboard=unnamed
 set showcmd
 set sw=2
 set ruler
@@ -20,6 +19,7 @@ set termwinsize=15x0
 
 " ShortCuts
 map <Space> <Leader>
+map <leader>h :reg
 map <leader>fr :%s/old/new/g
 map <leader>t :below :terminal <cr>
 map <leader>n :tabnew <cr>
