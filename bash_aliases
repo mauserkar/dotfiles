@@ -122,7 +122,8 @@ alias net_ip_tables_forward='sudo /sbin/iptables -L FORWARD -n -v --line-numbers
 alias net_ports='netstat -tulanp'
 alias net_restart='/etc/init.d/networking restart'
 alias route_delete_docker='sudo route del -net 172.19.0.0 netmask 255.255.0.0 metric 0'
-net_check_open_port () { nc -z -v -w1 $1 $2; }
+net_check_open_port_tcp () { nc -zv -w1 $1 $2; }
+net_check_open_port_udp () { nc -zv -u -w1 $1 $2; }
 net_ip_geolocation () { curl ipinfo.io/$1; }
 
 ### Git
