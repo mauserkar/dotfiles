@@ -75,13 +75,13 @@ map <leader>k <plug>NERDCommenterToggle
 
 " Config multiple cursors
 let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_start_word_key      = '<leader>i'
 let g:multi_cursor_select_all_word_key = '<leader>ii'
-let g:multi_cursor_start_key           = '<leader>a'
 let g:multi_cursor_select_all_key      = '<leader>aa'
+let g:multi_cursor_start_word_key      = '<leader>i'
+let g:multi_cursor_start_key           = '<leader>a'
 let g:multi_cursor_next_key            = '<leader>af'
 let g:multi_cursor_prev_key            = '<leader>ab'
-let g:multi_cursor_skip_key            = '<leader>as'
+let g:multi_cursor_skip_key            = '<leader>aw'
 let g:multi_cursor_quit_key            = '<Esc>'
 
 " Install theme if not present
