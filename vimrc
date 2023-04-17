@@ -49,6 +49,7 @@ call plug#end()
 
 " Config Fzf
 map <leader>f :Files <cr>
+map <leader>yy "+y
 
 " Config GitGutter
 nmap <leader>gf <Plug>(GitGutterNextHunk)
