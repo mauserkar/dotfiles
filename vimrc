@@ -16,6 +16,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set termwinsize=15x0
+set shortmess-=S
 
 " ShortCuts
 map <Space> <Leader>
