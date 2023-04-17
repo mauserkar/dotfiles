@@ -28,6 +28,8 @@ map <leader>9 :res 100 <cr>
 map <leader>0 :res 0 <cr>
 map <leader>+ :res +5 <cr>
 map <leader>- :res -5 <cr>
+map <leader>qa :qall! <cr>
+map <leader>wqa :qall! <cr>
 nmap <leader>zw :set foldmethod=syntax <cr>
 nmap <leader>l gT
 nmap <leader>r gt
