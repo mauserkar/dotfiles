@@ -34,6 +34,7 @@ map <leader>wqa :qall! <cr>
 nmap <leader>zw :set foldmethod=syntax <cr>
 nmap <leader>l gT
 nmap <leader>r gt
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Remap
 map <F2> <c-w>W
