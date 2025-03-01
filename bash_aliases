@@ -22,7 +22,7 @@ alias cat_group="cat /etc/group | column -t -s:"
 
 ### Common
 alias show_date='date +%H%M%S-%d%m%Y'
-# alias rm_history="history -d `history | tail -1 | awk {'print $1'}`"
+alias rm_history="history -c && rm .bash_history"
 alias copy='xclip -selection clipboard'
 alias paste='xclip -selection clipboard -o'
 alias random_number='shuf -i 100000-200000 -n 1'
@@ -63,13 +63,13 @@ d_log() { docker logs -t --tail 100 -f $1; }
 d_exec() { docker exec -it $1 bash; }
 
 ### K8s
-alias kc="kubectl"
-alias kc_get_all="kubectl get deployment,svc,pods,pvc,pv,ing --all-namespaces -o wide"
-alias kc_get_pods_all="kubectl get pods --all-namespaces -o wide"
-alias kc_get_services_all="kubectl get services --all-namespaces -o wide"
-alias kc_apply="kubectl apply -f"
-alias kc_delete="kubectl delete -f"
-alias kc_api="kubectl api-resources"
+alias k="kubectl"
+alias k_get_all="kubectl get deployment,svc,pods,pvc,pv,ing --all-namespaces -o wide"
+alias k_get_pods_all="kubectl get pods --all-namespaces -o wide"
+alias k_get_services_all="kubectl get services --all-namespaces -o wide"
+alias k_apply="kubectl apply -f"
+alias k_delete="kubectl delete -f"
+alias k_api="kubectl api-resources"
 
 ### Lxc
 alias lxc_start='lxc-start -n '
@@ -85,7 +85,7 @@ alias a_stop='/etc/init.d/apache2 stop'
 alias a_set_permissions='chown www-data:www-data . -R'
 
 ### Python
-alias py_server_start='python manage.py runserver localhost:8000'
+alias py_server_start='python -m http.server'
 alias pip_upgrade='pip install --upgrade pip'
 alias pip_requirements_freeze='pip freeze > requirements.txt'
 alias pip_requirements_install='pip install -r requirements.txt'
@@ -99,7 +99,7 @@ py_env() {
       python -m venv $HOME/.py_env/$NAME && source $HOME/.py_env/$NAME/bin/activate
     fi
   else
-    python -m venv /tmp/py-env-$(date +%H%M-%d%m%Y) && source /tmp/py-venv-$(date +%H%M-%d%m%Y)/bin/activate
+    python -m venv .venv && source .venv/bin/activate
   fi
 }
 
@@ -114,7 +114,7 @@ an_fact() { ansible $1 -m setup; }
 
 ### Networking
 alias net_ip_private="ifconfig | grep inet | egrep -v 'inet6|127.0'"
-alias net_ip_public='curl http://icanhazip.com/'
+alias net_ip_public='curl http://ifconfig.me/'
 alias net_ip_tables_list="sudo /sbin/iptables -L -n -v --line-numbers"
 alias net_ip_tables_input='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
 alias net_ip_tables_output='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
