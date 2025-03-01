@@ -1,0 +1,3 @@
+#!/bin/bash
+curl -sfLo ~/.bash_aliases https://raw.githubusercontent.com/mauserkar/dotfiles/main/bash_aliases
+echo "Dotfiles installed"
