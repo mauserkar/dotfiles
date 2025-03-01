@@ -7,7 +7,7 @@ curl -s https://raw.githubusercontent.com/mauserkar/dotfiles/main/README.md | gr
 
 ### Bash_aliases
 ```
-curl -sfLo ~/.bash_aliases https://raw.githubusercontent.com/mauserkar/dotfiles/main/bash_aliases 
+curl -s https://alias.carlosgaro.com | sh
 ```
 
 ### Vim
