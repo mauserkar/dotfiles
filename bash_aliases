@@ -67,6 +67,11 @@ alias k="kubectl"
 alias k_get_all="kubectl get deployment,svc,pods,pvc,pv,ing --all-namespaces -o wide"
 alias k_get_pods_all="kubectl get pods --all-namespaces -o wide"
 alias k_get_services_all="kubectl get services --all-namespaces -o wide"
+k_pod_nginx() { kubectl get pod -n ingress | grep -v NAME | grep Running | awk '{print $1}'; }
+k_pod_log_nginx() { 
+  nginx=$(kubectl get pod -n ingress | grep -v NAME | grep Running | awk '{print $1}')
+  kubectl logs -f --tail 10 -n ingress $nginx
+}
 alias k_apply="kubectl apply -f"
 alias k_delete="kubectl delete -f"
 alias k_api="kubectl api-resources"
