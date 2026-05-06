@@ -2,17 +2,17 @@
 
 ## Install
 ```
-curl -s https://raw.githubusercontent.com/mauserkar/dotfiles/main/README.md | grep curl | grep -v README | sh
+curl -sL https://raw.githubusercontent.com/mauserkar/dotfiles/main/README.md | grep curl | grep -v README | sh
 ```
 
 ### Bash_aliases
 ```
-curl -s https://alias.carlosgaro.com | sh
+curl -sL http://alias.carlosgaro.com | bash
 ```
 
 ### Vim
 ```
-curl -sfLo ~/.vimrc https://raw.githubusercontent.com/mauserkar/dotfiles/main/vimrc 
+curl -sL http://vim.carlosgaro.com | bash
 ```
 
 ### Neovim

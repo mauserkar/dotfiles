@@ -1,3 +1,12 @@
 #!/bin/bash
+
+# curl -L alias.carlosgaro.com | bash
+
+if [ -f ~/.bash_aliases ]; then
+  cp ~/.bash_aliases ~/.bash_aliases.bak.$(date +%Y%m%d_%H%M%S)
+  echo "Backup created: ~/.bash_aliases.bak.$(date +%Y%m%d_%H%M%S)"
+fi
+
 curl -sfLo ~/.bash_aliases https://raw.githubusercontent.com/mauserkar/dotfiles/main/bash_aliases
+
 echo "Dotfiles installed"

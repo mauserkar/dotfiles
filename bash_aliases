@@ -5,6 +5,10 @@ alias apt_remove='apt-get remove'
 alias apt_autoremove='apt-get autoremove'
 alias apt_search='apt-cache search'
 
+# install
+alias install_alias='curl -L alias.carlosgaro.com  | bash'
+alias install_vim='curl -L vim.carlosgaro.com  | bash'
+
 ### Cmd
 alias nano='nano -xc' 
 alias wget='wget -c' 
@@ -32,6 +36,10 @@ generate_ssh() {
   ssh-keygen -t rsa -b 4096 -N "" -f $SSH_NAME -C $SSH_NAME.pub > /dev/null
   mv $SSH_NAME $SSH_NAME.key
   cat $SSH_NAME.pub
+}
+function ssh_save_key() {
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/$1
 }
 rpl_env() { envsubst < $1 | $2 -; }
 

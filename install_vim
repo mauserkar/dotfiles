@@ -1,0 +1,54 @@
+#!/bin/bash
+
+if [ -f ~/.vimrc ]; then
+  cp ~/.vimrc ~/.vimrc.bak.$(date +%Y%m%d_%H%M%S)
+  echo "Backup created: ~/.vimrc.bak.$(date +%Y%m%d_%H%M%S)"
+fi
+
+curl -sfLo ~/.vimrc https://raw.githubusercontent.com/mauserkar/dotfiles/main/vimrc 
+
+vim +PlugInstall +qall
+
+echo "Vimrc installed"
+
+cat << EOF > ~/.vimrc.shortcuts
+=== VIM SHORTCUTS ===
+
+NAVIGATION
+<Space>       Leader key
+<leader>l     Previous tab
+<leader>r     Next tab
+<leader>n     New tab
+<leader>w     Close tab
+F2            Switch window
+
+TERMINAL
+<leader>t     Open terminal below
+<leader>9     Maximize terminal
+<leader>0     Minimize terminal
+<leader>+     Increase terminal size
+<leader>-     Decrease terminal size
+
+FILES
+<leader>f     FZF file search
+<leader>d     Toggle NERDTree
+
+GIT
+<leader>gf    Next git change
+<leader>gb    Previous git change
+<leader>gd    Git diff
+
+EDITING
+<leader>i     Multi cursor (word)
+<leader>a     Multi cursor (selection)
+<leader>k     Toggle comment
+<leader>fr    Find & replace (old -> new)
+<leader>yy    Copy to clipboard
+<leader>h     Show registers
+<leader>zw    Fold by syntax
+
+QUIT
+<leader>qa    Quit all
+EOF
+
+cat ~/.vimrc.shortcuts
