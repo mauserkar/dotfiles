@@ -7,10 +7,6 @@ fi
 
 curl -sfLo ~/.vimrc https://raw.githubusercontent.com/mauserkar/dotfiles/main/vimrc 
 
-vim +PlugInstall +qall
-
-echo "Vimrc installed"
-
 cat << EOF > ~/.vimrc.shortcuts
 === VIM SHORTCUTS ===
 
@@ -52,3 +48,6 @@ QUIT
 EOF
 
 cat ~/.vimrc.shortcuts
+
+echo "=== VIM INSTALLED ==="
+echo "run +PlugInstall +qall"
