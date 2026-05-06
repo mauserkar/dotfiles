@@ -49,5 +49,8 @@ EOF
 
 cat ~/.vimrc.shortcuts
 
+echo ""
+echo ""
 echo "=== VIM INSTALLED ==="
+echo ""
 echo "run +PlugInstall +qall"
