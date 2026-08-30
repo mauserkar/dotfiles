@@ -1,27 +1,49 @@
 # Dotfiles
 
 ## Install
-```
-curl -sL https://raw.githubusercontent.com/mauserkar/dotfiles/main/README.md | grep curl | grep -v README | sh
+
+> Requires `jq` for `neovim`/`opencode` (dynamic directory sync).
+
+Install everything:
+
+```bash
+curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash
 ```
 
-### Bash_aliases
+Install only specific sections (one or more, space-separated):
+
+```bash
+curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- vim neovim
 ```
-curl -sL http://alias.carlosgaro.com | bash
+
+Available sections: `bash_aliases`, `vim`, `neovim`, `terminator`, `opencode`.
+
+### Bash_aliases
+
+```bash
+curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- bash_aliases
 ```
 
 ### Vim
-```
-curl -sL http://vim.carlosgaro.com | bash
+
+```bash
+curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- vim
 ```
 
 ### Neovim
-```
-curl -sfLo ~/.config/nvim/init.vim --create-dirs https://raw.githubusercontent.com/mauserkar/dotfiles/main/init.vim 
+
+```bash
+curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- neovim
 ```
 
 ### Terminator
-```
-curl -sfLo ~/.config/terminator/config --create-dirs https://raw.githubusercontent.com/mauserkar/dotfiles/main/terminator.config
+
+```bash
+curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- terminator
 ```
 
+### Opencode
+
+```bash
+curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- opencode
+```
