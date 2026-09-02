@@ -68,6 +68,7 @@
           "npm test*": "allow",
           "openspec *": "allow",
           "pytest *": "allow",
+          "pgrep *": "allow",
           "rm *": "deny",
           "sed -n *": "allow",
           "sort *": "allow",
