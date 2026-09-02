@@ -176,20 +176,10 @@ alias tf_workspace='terraform workspace'
 
 ### Opencode
 oc_web() {
-    local target_home="$(dirname "$PWD")"
     local oc_port="${1:-4545}"
-    local oc_home="$HOME/.config/opencode"
-    echo "$target_home"
-
-    local tmp_log="/tmp/oc_web_starting.log"
-    OPENCODE_CONFIG_DIR="$oc_home" HOME="$target_home" \
-        oc web --port "$oc_port" --hostname 0.0.0.0 > "$tmp_log" 2>&1 &
-
+    local tmp_log="/tmp/oc_web_starting_$oc_port.log"
+    oc web --port "$oc_port" --hostname 0.0.0.0 > "$tmp_log" 2>&1 &
     local pid=$!
     disown
-
-    local log_file="/tmp/oc_web_${pid}.log"
-    mv "$tmp_log" "$log_file"
-
-    echo "oc web corriendo en background (PID: $pid), puerto $oc_port, logs en $log_file"
+    echo "oc web running in the background (PID: $pid), port $oc_port"
 }
