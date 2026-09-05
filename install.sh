@@ -115,6 +115,7 @@ install_bash_aliases() {
 install_vim() {
   echo "Installing vim..."
   symlink_item "$DOTFILES_DIR/vim/vimrc" "$HOME/.vimrc"
+  echo "RUN vim -c PlugInstall\|qa! to install vim pluggins"
 }
 
 install_neovim() {
