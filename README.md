@@ -1,16 +1,6 @@
 # Dotfiles
 
-An automated management script that clones this repository locally to `~/.dotfiles` and sets up symbolic links for your configuration files.
-
-## Features
-
-- **Local Repository Management**: Automatically clones or updates (`git pull --rebase`) the repository in `~/.dotfiles`.
-- **Smart Symlinking**:
-  - Automatically skips creating links if a valid symlink already points to the repository file/folder.
-  - If a section directory contains subdirectories (e.g., `neovim`, `opencode`), top-level items are linked individually.
-  - If a section directory does not contain subdirectories, the entire folder structure or target file is symlinked.
-- **Automatic Backups**: Creates timestamped backups (`.bak.YYYYMMDD_HHMMSS`) before overwriting existing non-matching files, directories, or broken symlinks.
-- **Zero Extra Dependencies**: Uses standard Unix tools (`bash`, `git`, `find`, `ln`). `jq` is no longer required.
+An automated management script that clones this repository locally to `~/repos/dotfiles` and sets up symbolic links for your configuration files.
 
 ## Installation
 
@@ -19,8 +9,8 @@ An automated management script that clones this repository locally to `~/.dotfil
 Clone and execute the installation script directly:
 
 ```bash
-git clone https://github.com/mauserkar/dotfiles.git ~/.dotfiles
-~/.dotfiles/install.sh
+git clone https://github.com/mauserkar/dotfiles.git ~/repos/dotfiles
+~/repos/dotfiles/install.sh
 ```
 
 Or run directly via remote execution:
@@ -42,7 +32,7 @@ curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh |
 Or locally:
 
 ```bash
-~/.dotfiles/install.sh vim neovim
+~/repos/dotfiles/install.sh vim neovim
 ```
 
 **Available sections**: `bash_aliases`, `vim`, `neovim`, `terminator`, `opencode`.
