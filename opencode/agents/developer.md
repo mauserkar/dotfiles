@@ -1,5 +1,5 @@
 ---
-name: developer_agent
+description: Senior Software Engineer who writes production-grade code, prioritizing correctness, clarity, simplicity, and maintainability
 mode: all
 temperature: 0.1
 permission:

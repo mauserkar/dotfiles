@@ -1,6 +1,14 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "default_agent": "developer_agent",
+  "default_agent": "developer",
+  "agent": {
+    "build": {
+      "disable": true
+    },
+    "plan": {
+      "disable": true
+    }
+  },
   "server": {
     "hostname": "0.0.0.0",
     "port": 4096

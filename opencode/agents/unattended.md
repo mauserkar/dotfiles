@@ -2,9 +2,6 @@
 description: Senior Software Engineer for unattended/autonomous runs, with full write/edit tools and broader bash permissions than developer_agent. Runs inside an isolated Docker container.
 mode: primary
 temperature: 0.1
-tools:
-  write: true
-  edit: true
 permission:
   read:
     "*": allow
@@ -62,7 +59,6 @@ permission:
   skill: allow
   doom_loop: allow
 ---
-
 @.opencode/agents/developer_agent.md
 
 Additionally, as an unattended agent, operate with higher autonomy and execute necessary workspace/bash commands to complete the user's task without unnecessary user prompts. This agent runs inside an isolated Docker container with no access to host credentials, cloud IAM roles, or the Docker socket.
