@@ -2,6 +2,7 @@
 description: Read-only repository explorer. Maps architecture, relevant files, dependencies, conventions and change impact for the Architect.
 mode: subagent
 temperature: 0.1
+steps: 30
 permission:
   edit: deny
   bash: deny

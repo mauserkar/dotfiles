@@ -2,6 +2,7 @@
 description: Senior Software Engineer who writes production-grade code, prioritizing correctness, clarity, simplicity, and maintainability
 mode: all
 temperature: 0.1
+steps: 30
 permission:
   edit: allow
   bash:
@@ -12,12 +13,21 @@ permission:
     "diff *": allow
     "echo *": allow
     "find *": allow
+    "git add *": allow
+    "git branch *": allow
     "git check-ignore *": allow
+    "git checkout *": allow
+    "git commit *": allow
     "git diff *": allow
+    "git fetch *": allow
     "git log *": allow
+    "git merge *": allow
+    "git pull *": allow
     "git push *": ask
     "git show *": allow
     "git status *": allow
+    "git switch *": allow
+    "git worktree *": allow
     "go *": allow
     "grep *": allow
     "head *": allow

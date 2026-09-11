@@ -2,6 +2,7 @@
 description: Read-only technical researcher for external documentation, APIs, libraries and current best practices.
 mode: subagent
 temperature: 0.2
+steps: 30
 permission:
   edit: deny
   bash: deny

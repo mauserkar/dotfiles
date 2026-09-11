@@ -2,6 +2,7 @@
 description: Read-only security reviewer for authentication, authorization, secrets, injection, dependency and boundary issues.
 mode: subagent
 temperature: 0.1
+steps: 30
 permission:
   edit: deny
   task: deny

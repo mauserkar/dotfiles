@@ -2,6 +2,7 @@
 description: Test and validation specialist. Runs focused tests and reports failures, regressions and validation gaps.
 mode: subagent
 temperature: 0.1
+steps: 30
 permission:
   edit: allow
   task: deny
