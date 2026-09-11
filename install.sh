@@ -3,7 +3,7 @@ set -euo pipefail
 
 DOTFILES_DIR="${HOME}/repos/dotfiles"
 REPO_URL="git@github.com:mauserkar/dotfiles.git"
-ALL_SECTIONS=(bash_aliases vim neovim terminator opencode)
+ALL_SECTIONS=(bash_aliases vim neovim terminator)
 
 # 1. Ensure local repository checkout / update via SSH
 setup_repo() {
@@ -129,11 +129,6 @@ install_terminator() {
   symlink_item "$DOTFILES_DIR/terminator/terminator.config" "$HOME/.config/terminator/config"
 }
 
-install_opencode() {
-  echo "Installing opencode..."
-  sync_section_dir "opencode" "$HOME/.config/opencode"
-}
-
 # --- Main Execution ---
 
 setup_repo
@@ -150,7 +145,6 @@ for section in "${SECTIONS[@]}"; do
     vim)          install_vim ;;
     neovim)       install_neovim ;;
     terminator)   install_terminator ;;
-    opencode)     install_opencode ;;
     *) echo "Unknown section: $section (valid options: ${ALL_SECTIONS[*]})" >&2; exit 1 ;;
   esac
 done
