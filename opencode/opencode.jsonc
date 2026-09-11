@@ -16,5 +16,17 @@
   },
   "plugin": [
     "opencode-plugin-openspec"
-  ]
+  ],
+  "experimental": {
+    "continue_loop_on_deny": false
+  },
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  },
+  "tool_output": {
+    "max_lines": 500,
+    "max_bytes": 20000
+  }
 }

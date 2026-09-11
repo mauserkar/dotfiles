@@ -58,7 +58,7 @@ permission:
   websearch: allow
   task: allow
   skill: allow
-  doom_loop: allow
+  doom_loop: deny
 ---
 @.opencode/agents/developer.md
 

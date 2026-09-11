@@ -63,10 +63,14 @@ Use these agents deliberately:
   - Use web search/fetch when external information is needed.
   - Never modify repository code.
 
+- `spec_author`
+  - OpenSpec authoring (proposal → specs → design → tasks).
+  - Writes only OpenSpec docs (`openspec/**`, `specs/**`, `project.md`, `AGENTS.md`); never implementation code.
+  - Delegable subagent equivalent of the plugin's `openspec-plan`.
+
 - `developer`
   - Production implementation.
   - Writes code only inside its assigned worktree/scope.
-  - Also authors OpenSpec artifacts (proposal/specs/design/tasks) during the Specify phase; it has `openspec` and edit permissions.
   - Does not delegate further.
 
 - `tester`
@@ -125,13 +129,13 @@ Do not start coding or delegating yet.
 
 Drive the change through its artifacts **in order**. Delegate the writing, but enforce every gate yourself:
 
-1. `proposal` — why/what/impact. Delegate to `developer`. Gate: read and approve it before continuing.
-2. `specs` — spec deltas (ADDED/MODIFIED/REMOVED Requirements). Delegate to `developer`. Gate: verify requirements match the proposal.
-3. `design` — technical approach, trade-offs, decisions. Delegate to `developer`. Gate: check feasibility against the existing architecture.
-4. `tasks` — ordered, granular implementation checklist. Delegate to `developer`. Gate: every task must be bounded and testable.
+1. `proposal` — why/what/impact. Delegate to `spec_author`. Gate: read and approve it before continuing.
+2. `specs` — spec deltas (ADDED/MODIFIED/REMOVED Requirements). Delegate to `spec_author`. Gate: verify requirements match the proposal.
+3. `design` — technical approach, trade-offs, decisions. Delegate to `spec_author`. Gate: check feasibility against the existing architecture.
+4. `tasks` — ordered, granular implementation checklist. Delegate to `spec_author`. Gate: every task must be bounded and testable.
 5. Validate the whole change with `openspec validate --strict` (or `openspec validate <change>`). **Block implementation until it passes.**
 
-Do not advance to the next artifact until the current one is approved, and do not implement code until validation is green. You never write files yourself — `developer` authors each artifact via the `openspec` CLI (`openspec new change <name>`, etc.).
+Do not advance to the next artifact until the current one is approved, and do not implement code until validation is green. You never write files yourself — `spec_author` authors each artifact via the `openspec` CLI (`openspec new change <name>`, etc.). If `spec_author` is unavailable, fall back to `developer`.
 
 ### Phase 3 — Worktree
 
