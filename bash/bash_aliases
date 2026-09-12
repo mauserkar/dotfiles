@@ -175,6 +175,7 @@ alias tf_version='tfswitch'
 alias tf_workspace='terraform workspace'
 
 ### Opencode
+alias oc_personal="OPENCODE_CONFIG=~/.config/opencode/profiles/personal/opencode.jsonc opencode"
 oc_web() {
     local oc_port="${1:-4545}"
     local tmp_log="/tmp/oc_web_starting_$oc_port.log"
