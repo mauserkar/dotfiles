@@ -9,7 +9,7 @@ An automated management script that clones this repository locally to `~/repos/d
 Clone and execute the installation script directly:
 
 ```bash
-git clone https://github.com/mauserkar/dotfiles.git ~/repos/dotfiles
+git clone git@github.com:mauserkar/dotfiles.git ~/repos/dotfiles
 ~/repos/dotfiles/install.sh
 ```
 
@@ -18,6 +18,8 @@ Or run directly via remote execution:
 ```bash
 curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash
 ```
+
+> Note: `install.sh` uses SSH (`git@github.com:mauserkar/dotfiles.git`) and resets `origin` to SSH on update. Make sure your SSH key is configured.
 
 ---
 
@@ -35,7 +37,7 @@ Or locally:
 ~/repos/dotfiles/install.sh vim neovim
 ```
 
-**Available sections**: `bash_aliases`, `vim`, `neovim`, `terminator`, `opencode`.
+**Available sections**: `bash_aliases`, `vim`, `neovim`, `terminator`.
 
 ---
 
@@ -43,7 +45,7 @@ Or locally:
 
 #### Bash Aliases
 
-Symlinks `bash/bash_aliases` to `~/.bash_aliases`.
+Symlinks `~/repos/dotfiles/bash/bash_aliases` to `~/.bash_aliases`.
 
 ```bash
 curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- bash_aliases
@@ -51,7 +53,7 @@ curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh |
 
 #### Vim
 
-Symlinks `vim/vimrc` to `~/.vimrc`.
+Symlinks `~/repos/dotfiles/vim/vimrc` to `~/.vimrc`.
 
 ```bash
 curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- vim
@@ -59,7 +61,9 @@ curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh |
 
 #### Neovim
 
-Symlinks top-level configuration files and subdirectories under `neovim/` into `~/.config/nvim/`.
+Symlinks `~/repos/dotfiles/neovim/` to `~/.config/nvim/`.
+
+> Note: if subdirectories are added under `neovim/`, `install.sh` (`sync_section_dir`) links top-level items into `~/.config/nvim/` instead of the whole directory.
 
 ```bash
 curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- neovim
@@ -67,16 +71,8 @@ curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh |
 
 #### Terminator
 
-Symlinks `terminator/terminator.config` to `~/.config/terminator/config`.
+Symlinks `~/repos/dotfiles/terminator/terminator.config` to `~/.config/terminator/config`.
 
 ```bash
 curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- terminator
-```
-
-#### Opencode
-
-Symlinks top-level configuration files and subdirectories under `opencode/` into `~/.config/opencode/`.
-
-```bash
-curl -sfL https://raw.githubusercontent.com/mauserkar/dotfiles/main/install.sh | bash -s -- opencode
 ```
